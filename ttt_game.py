@@ -1,4 +1,4 @@
-## Alex Chalco Tic Tac Toe game
+## Alex Chalco Tic Tac Toe game please let me know if there is anything wrong with the code pls and thankies 
 
 def the_board(board):
     #clear_output()
