@@ -1,15 +1,18 @@
-## Alex Chalco Tic Tac Toe game please let me know if there is anything wrong with the code pls and thankies 
+## Alex Chalco 
+# Tty_game.py (Creation date well say 4/21) 
+# This is my first project in which I make a tic tac toe game that prints a board in which the players choose where they would like to place their game marker 
+# Please let me know if there is anything wrong with the code pls and thankies 
 
-def the_board(board):
+def game_board(board):
     #clear_output()
-    print(board[0] + '|' + board[1] + '|' + board[2])
+    print(board[0][0] + '|' + board[0][1] + '|' + board[0][2])
     print('-----')
-    print(board[3] + '|' + board[4] + '|' + board[5])
+    print(board[1][0] + '|' + board[1][1] + '|' + board[1][2])
     print('-----')
-    print(board[6] + '|' + board[7] + '|' + board[8])
+    print(board[2][0] + '|' + board[2][1] + '|' + board[2][2])
 
-
-def player_choice(choice): #This funtion will allow the user to choose whether Player 1 wants to be either X or O and depending on the first players input it will assign the variable player 1 and player 2 accordingly 
+#This funtion will allow the user to choose whether Player 1 wants to be either X or O and depending on the first players input it will assign the variable player 1 and player 2 accordingly
+def player_choice(choice):  
     if choice == 'X':
         player1 = 'X'
         player2 = 'O'
@@ -17,9 +20,9 @@ def player_choice(choice): #This funtion will allow the user to choose whether P
         player1 = 'O'
         player2 = 'X'
     return player1,player2 
-
-board=['','','','','','','','','']
-#the_board(board)
+#The game board will be a 2D array to be able to check for rows later on for the win conditions 
+board=[['','',''],['','',''],['','','']]
+#game_board(board)
 start = input('Player 1 Please choose if you want to be X or O(keep in mind that the input must be either capital X or capital O)')
 player_choice(start)
 counter = 0 
@@ -37,34 +40,34 @@ while counter < 4:
     board[play_2]=(player2)
     #This allows the same the same thing to happen for player 2 
 
-    the_board(board)
+    game_board(board)
     # This will print out the board to what the current round is 
 
     # The following will be what determines the following rounds to come to be
     # Checks for win conditions/ conditions to continue 
 
-    if board[1] == board[2] == board[3]:
+    if board[0] == board[1] == board[2]:
         print('Congrats! Player {} you have won the game'.format(board[1]))
         break
-    elif board[4] == board[5] == board[6]:
+    elif board[3] == board[4] == board[5]:
         print('Congrats! Player {} you have won the game'.format(board[4]))
         break 
-    elif board[7] == board[8] == board[9]:
+    elif board[6] == board[7] == board[8]:
         print('Congrats! Player {} you have won the game'.format(board[7]))
         break
-    elif board[3] == board[6] == board[9]:
+    elif board[2] == board[5] == board[8]:
         print('Congrats! Player {} you have won the game'.format(board[3]))
         break 
-    elif board[2] == board[5] == board[8]:
+    elif board[1] == board[4] == board[7]:
         print('Congrats! Player {} you have won the game'.format(board[2]))
         break
-    elif board[1] == board[4] == board[7]:
+    elif board[0] == board[3] == board[6]:
         print('Congrats! Player {} you have won the game'.format(board[1]))
         break
-    elif board[1] == board[5] == board[9]:
+    elif board[0] == board[4] == board[8]:
         print('Congrats! Player {} you have won the game'.format(board[1]))
         break 
-    elif board[3] == board[5] == board[7]:
+    elif board[2] == board[4] == board[6]:
         print('Congrats! Player {} you have won the game'.format(board[3]))
         break 
     elif counter == 4: 
@@ -75,5 +78,3 @@ while counter < 4:
 counter += 1 
 
 print('Thanks for playing!')
-
-print('This line was created for the sole purpose of making a pull request dont ask me why')
